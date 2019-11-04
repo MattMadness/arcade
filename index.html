@@ -37,37 +37,16 @@ padding:6px;
 
         
     </style>
-  <script>
-    function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  var user=getCookie("username");
-  if (user != "") {
-    alert("Welcome again " + user);
-  } else {
-     user = prompt("Please enter your name:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
-}
+<script>
+function load() {
+    if document.cookie.visited = "true" {
+    } else {
+    window.alert("New Game: Saw Saw by Matthew Evan");
+    document.cookie = "visited=true; expires="getTime() + "31536000000"";
+};
 </script>
 </head>
-<body onload="checkCookie()">
+<body onload="load()">
     
     <div id="container">
     <h1>Matthew Evan's Arcade</h1>
